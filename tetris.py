@@ -1,5 +1,10 @@
 rows = 15
 columns = 10
+from pygame import mixer 
+mixer.init() 
+mixer.music.load("tetris.mp3") 
+mixer.music.set_volume(0.7) 
+mixer.music.play(-1)
 print("Welcome to Tetris\nCreated By shakArora\n\nRules: \na/d: Left and right\ns: Down two\nw: Rotate\nenter: Down one\nHave fun playing!")
 import random
 import time
@@ -21,7 +26,7 @@ def printVisual():
         row_str += " |"
         print(row_str)
     print("‾‾‾‾‾‾‾‾‾‾‾\n\n")
-def clear_block(startRow, startCol, block_type):
+def clear_block(startRow, startCol, block_type): 
     for i in range(len(block_type)):
         for j in range(len(block_type[0])):
             if block_type[i][j] == 'X':
